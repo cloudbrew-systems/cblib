@@ -1,0 +1,4 @@
+#node
+build/*
+cbUpload.node
+cbDownload.node

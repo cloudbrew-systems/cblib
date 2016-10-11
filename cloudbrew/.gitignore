@@ -1,0 +1,6 @@
+#src
+*.o
+cbSqlite
+cbUpload
+cbDownload
+cloudbrew

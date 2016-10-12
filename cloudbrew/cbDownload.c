@@ -7,7 +7,7 @@
 **	Author: 	Runcy Oommen									**
 **	Date:	02/17/2016										**
 
-**	Copyright 2016 CloudBrew Labs LLP. All rights reserved.			**
+**	Copyright 2016 CloudBrew Systems. All rights reserved.			**
 *******************************************************/
 
 #include <stdio.h>

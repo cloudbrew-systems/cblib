@@ -4,7 +4,7 @@ ROOT := ..
 include $(ROOT)/make-include.mk
 
 CB_LIB = libCloudBrew.so
-OBJS = MemMgr.o accountHandling.o fileHandling.o brewEngine.o cbLog.o dbSqlite.o
+OBJS = MemMgr.o accountHandling.o fileHandling.o brewEngine.o cbLog.o
 INCLUDES = -I$(INSTALL_INCLUDE_DIR)
 
 all: $(CB_LIB) install

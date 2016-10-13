@@ -24,7 +24,6 @@
 #include "brewEngine.h"
 #include "cJSON.h"
 #include "MemMgr.h"
-#include "dbSqlite.h"
 
 /* Get the size of the file in bytes */
 unsigned long long int fileHandling_GetSizeInBytes(char *fileAbsLoc)
@@ -449,7 +448,7 @@ char *fileHandling_EncryptShreds(char *fileName, char *type, char *userId, char 
 			/* Delete the leftover original split file shreds */
 			fileHandling_DeleteShreds(shredFileName_chopped, userId);
 
-			/* Get the SHA256 hash of the encrypted split file shreds for stroing into SQLite DB */
+			/* Get the SHA256 hash of the encrypted split file shreds */
 			char encryptedFileAbsLoc[MAX_LEN] = {'\0'};
 			snprintf(encryptedFileAbsLoc, MAX_LEN, "%s/%s/%s", TEMP_DIR, userId, encryptedFileName);
 			char *encryptedFileNameHash = fileHandling_GetSHA256Hash(encryptedFileAbsLoc);

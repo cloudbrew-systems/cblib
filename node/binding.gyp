@@ -6,7 +6,7 @@
 		'defines': [ 'V8_DEPRECATION_WARNINGS=1' ],
 		'sources': [ 'cbUpload.cpp', 'cbUpload_wrapper.cpp' ],
 		'include_dirs': [ '../include' ],
-		'libraries': [ '-lcJSON', '-lCloudBrew', '-lsqlite3' ],
+		'libraries': [ '-lcJSON', '-lCloudBrew' ],
 		'cflags': ['-Wall', '-std=c++11']
 	},
 	{
@@ -14,7 +14,7 @@
 		'defines': [ 'V8_DEPRECATION_WARNINGS=1' ],
 		'sources': [ 'cbDownload.cpp', 'cbDownload_wrapper.cpp' ],
 		'include_dirs': [ '../include' ],
-		'libraries': [ '-lcJSON', '-lCloudBrew', '-lsqlite3' ],
+		'libraries': [ '-lcJSON', '-lCloudBrew' ],
 		'cflags': ['-Wall', '-std=c++11']
 	},
 	]

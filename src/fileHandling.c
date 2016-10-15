@@ -451,7 +451,7 @@ char *fileHandling_EncryptShreds(char *fileName, char *type, char *userId, char 
 			/* Get the SHA256 hash of the encrypted split file shreds */
 			char encryptedFileAbsLoc[MAX_LEN] = {'\0'};
 			snprintf(encryptedFileAbsLoc, MAX_LEN, "%s/%s/%s", TEMP_DIR, userId, encryptedFileName);
-			char *encryptedFileNameHash = fileHandling_GetSHA256Hash(encryptedFileAbsLoc);
+			fileHandling_GetSHA256Hash(encryptedFileAbsLoc);
 
 			snprintf(fileEncryptedStateJSONSingle, MAX_LEN*2, "{\"%s\": \"%s\", \"%s\": \"%s\", \"%s\": \"%s\"}", ACCOUNTNAME, accountName, ENCRYPTED_SPLIT_NAME, encryptedFileName, ENCRYPTED_ABSOLUTE_LOCATION, encryptedFileAbsLoc);
 			strcat(fileEncryptedStateJSON, fileEncryptedStateJSONSingle);
@@ -460,10 +460,6 @@ char *fileHandling_EncryptShreds(char *fileName, char *type, char *userId, char 
 				strcat(fileEncryptedStateJSON, "]}");
 			else
 				strcat(fileEncryptedStateJSON, ",");
-
-			//char sqlStatement[MAX_CMD_LEN*2];
-			//snprintf(sqlStatement, MAX_CMD_LEN*2, "INSERT into CBHash values(NULL,\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\")", fileName, originalFileNameHash, userId, encryptedFileName, encryptedFileNameHash, accountName);
-			//dbhExec(DBH_CBHASH, sqlStatement);
 
 			ctr++;
 		}

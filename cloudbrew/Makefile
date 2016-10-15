@@ -27,9 +27,6 @@ $(APP_UPLOAD): $(CB_UPLOAD_OBJS)
 $(APP_DOWNLOAD): $(CB_DOWNLOAD_OBJS)
 	$(CC) -o $@ $(CFLAGS) -pthread $(CB_DOWNLOAD_OBJS) $(CB_LIB) -ldl $(CJSON_LIB) -lm
 
-$(APP_CBSQLITE): $(CB_SQLITE_OBJS)
-	$(CC) -o $@ $(CFLAGS) -pthread $(CB_SQLITE_OBJS) $(CB_LIB) -ldl $(CJSON_LIB) -lm
-
 .c.o: 
 	$(CC) $(CFLAGS) -Wall -fPIC $(INCLUDES) -c $<
 
@@ -38,5 +35,4 @@ clean:
 
 install:
 	sudo install -m 755 $(APP) $(APP_UPLOAD) $(APP_DOWNLOAD) $(INSTALL_BIN_DIR)
-	cd $(INSTALL_BIN_DIR) && ./$(STR_SETUP)
 

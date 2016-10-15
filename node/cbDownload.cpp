@@ -45,7 +45,8 @@ char *cb_download(char *downloadInfo)
 	/* Get the split flag */
 	cJSON *cjson_Split = cJSON_GetObjectItem(cjson_DownloadInfo, SPLIT);
 	snprintf(splitRaw, NIBBLE_LEN, "%s", cJSON_Print(cjson_Split));
-	char *split = brewEngine_CleanupQuotes(splitRaw);
+	//char *split = brewEngine_CleanupQuotes(splitRaw);
+	brewEngine_CleanupQuotes(splitRaw);
 
 	/* Get the userId */
 	cJSON *cjson_UserId = cJSON_GetObjectItem(cjson_DownloadInfo, UID);

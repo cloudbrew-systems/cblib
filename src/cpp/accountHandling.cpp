@@ -1,13 +1,13 @@
-/*******************************************************
-**	CloudBrew - Software Defined Distributed Public Cloud Storage	**
-**	Perform all tasks related to the linked accounts					**
+/*
+CloudBrew - Software Defined Distributed Public Cloud Storage
+Perform all tasks related to the linked accounts
 
-**	File:		accountHandling.c									**
-**	Author: 	Runcy Oommen									**
-**	Date:	11/02/2015										**
+File:	accountHandling.cpp
+Author:	Runcy Oommen
+Date:	11/02/2015
 
-**	Copyright 2015 CloudBrew Systems. All rights reserved.			**
-*******************************************************/
+Copyright 2015 CloudBrew Systems. All rights reserved.
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

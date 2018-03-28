@@ -1,4 +1,3 @@
-
 ROOT := ..
 
 include $(ROOT)/make-include.mk
@@ -12,7 +11,7 @@ all: $(CB_LIB) install
 $(CB_LIB): $(OBJS)
 	$(CC) -fPIC -shared $(LDFLAGS) -o $@ $^
 
-.c.o: 
+.cpp.o:
 	$(CC) $(CFLAGS) -Wall -fPIC $(INCLUDES) -c $<
 
 install:
@@ -22,4 +21,3 @@ install:
 
 clean:
 	rm -f *.o *.so
-

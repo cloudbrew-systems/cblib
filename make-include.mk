@@ -6,7 +6,7 @@ CLOUDBREW_INSTALL_DIR = /usr/local/cloudbrew
 CLOUDBREW_HASH_DBNAME = cbHash.db
 TEMP_UPLOAD = /tmp/upload
 
-CC = gcc -g
+CC = g++ -g
 
 ifeq (,$(ARCH))
         ARCH := $(shell uname -m)

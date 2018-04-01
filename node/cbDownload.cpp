@@ -1,14 +1,13 @@
+/*
+CloudBrew - Software Defined Distributed Public Cloud Storage
+Perform file decryption and join for download
 
-/*******************************************************
-**	CloudBrew - Software Defined Distributed Public Cloud Storage	**
-**	Perform file decryption and join for download					**
+File:	cbDownload.cpp
+Author:	Runcy Oommen
+Date:	02/17/2016
 
-**	File:		cbDownload.c										**
-**	Author: 	Runcy Oommen									**
-**	Date:	02/17/2016										**
-
-**	Copyright 2016 CloudBrew Systems. All rights reserved.			**
-*******************************************************/
+Copyright 2016 CloudBrew Systems. All rights reserved.
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -84,4 +83,3 @@ char *cb_download(char *downloadInfo)
 	free(cjson_FileName);
 	return response;
 }
-

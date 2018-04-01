@@ -1,10 +1,5 @@
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#ifndef CB_DOWNLOAD_H
-#define CB_DOWNLOAD_H
+#ifndef CB_DOWNLOAD_NODE_H
+#define CB_DOWNLOAD_NODE_H
 
 #ifndef NULL
 #define NULL 0
@@ -12,9 +7,4 @@ extern "C" {
 
 char *cb_download(char *downloadInfo);
 
-#endif /* CB_DOWNLOAD_H */
-
-#ifdef __cplusplus
-}
-#endif
-
+#endif /* CB_DOWNLOAD_NODE_H */

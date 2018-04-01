@@ -73,4 +73,3 @@ void init(Handle <Object> exports, Handle<Object> module) {
 
 /* Point of entry by initializing the <node_module_name> */
 NODE_MODULE(cbDownload, init)
-

@@ -1,14 +1,13 @@
+/*
+CloudBrew - Software Defined Distributed Public Cloud Storage
+Perform file split and encryption for upload.
 
-/*******************************************************
-**	CloudBrew - Software Defined Distributed Public Cloud Storage	**
-**	Perform file split and encryption for upload.						**
+File:	cbUpload_node.cpp
+Author:	Runcy Oommen
+Date:	02/17/2016
 
-**	File:		cbUpload_node.c									**
-**	Author: 	Runcy Oommen									**
-**	Date:	02/17/2016										**
-
-**	Copyright 2016 CloudBrew Systems. All rights reserved.			**
-*******************************************************/
+Copyright 2016 CloudBrew Systems. All rights reserved.
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

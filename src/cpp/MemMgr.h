@@ -1,8 +1,3 @@
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #ifndef __MEM_MGR_H
 #define __MEM_MGR_H
 
@@ -16,8 +11,3 @@ void *MEM_MALLOC (size_t memSize);
 }while(0)
 
 #endif /* __MEM_MGR_H */
-
-#ifdef __cplusplus
-}
-#endif
-

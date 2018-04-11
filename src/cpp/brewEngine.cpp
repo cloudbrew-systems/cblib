@@ -2,8 +2,8 @@
 CloudBrew - Software Defined Distributed Public Cloud Storage
 Heart of the system where the real magic happens
 
-File:		brewEngine.c
-Author: 	Runcy Oommen
+File:	brewEngine.cpp
+Author: Runcy Oommen
 Date:	12/13/2015
 
 Copyright 2015 CloudBrew Systems. All rights reserved.

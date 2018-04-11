@@ -1,8 +1,6 @@
 #ifndef BREW_ENGINE_H
 #define BREW_ENGINE_H
 
-#include "cJSON.h"
-
 #define BREWSCORE "BS"
 #define TOTALSPACE "TS"
 #define USEDSPACE "US"

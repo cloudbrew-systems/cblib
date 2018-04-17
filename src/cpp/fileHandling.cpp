@@ -21,7 +21,6 @@ Copyright 2015 CloudBrew Systems. All rights reserved.
 #include "accountHandling.h"
 #include "passPhrase.h"
 #include "brewEngine.h"
-#include "cJSON.h"
 #include "MemMgr.h"
 
 /* Get the size of the file in bytes */

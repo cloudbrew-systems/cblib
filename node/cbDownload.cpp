@@ -16,7 +16,6 @@ Copyright 2016 CloudBrew Systems. All rights reserved.
 #include "cbDownload.h"
 #include "cbDefines.h"
 #include "fileHandling.h"
-#include "cJSON.h"
 #include "accountHandling.h"
 #include "fileHandling.h"
 #include "brewEngine.h"

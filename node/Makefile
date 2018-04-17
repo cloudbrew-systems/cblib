@@ -1,4 +1,3 @@
-
 NODE_UPLOAD = cbUpload.node
 NODE_DOWNLOAD = cbDownload.node
 
@@ -11,4 +10,3 @@ clean:
 	rm -Rf build
 	rm -f $(NODE_UPLOAD)
 	rm -f $(NODE_DOWNLOAD)
-

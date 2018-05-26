@@ -1,6 +1,6 @@
-# 								#
+#
 # Makefile for CloudBrew Systems	#
-# 								#
+#
 
 ROOT = .
 
@@ -31,8 +31,8 @@ clean:
 	make -C cloudbrew clean
 	make -C node clean
 
-## CLEANS ALL INCLUDING 3RD PARTY STUFF EXCEPT MONGO/SQLITE DBs ##
-shine:
+## CLEANS ALL INCLUDING 3RD PARTY STUFF AND CB INSTALL DIR ##
+wipeout:
 	rm -Rf $(INSTALL_INCLUDE_DIR)
 	rm -Rf $(INSTALL_LIB_DIR)
 	rm -Rf $(INSTALL_BIN_DIR)
@@ -41,17 +41,5 @@ shine:
 	make -C src clean
 	make -C cloudbrew clean
 	make -C node clean
-
-## CLEANS ALL INCLUDING 3RD PARTY STUFF AND MONGO/SQLITE DBs ##
-wipeout:
-	rm -Rf $(INSTALL_INCLUDE_DIR)
-	rm -Rf $(INSTALL_LIB_DIR)
-	rm -Rf $(INSTALL_BIN_DIR)
-	sudo rm -f $(SYS_LIB_DIR)/libCloudBrew.so
-	make -C 3rdParty wipeout
-	make -C src clean
-	make -C cloudbrew clean
-	make -C node clean
 	sudo rm -Rf $(CLOUDBREW_INSTALL_DIR)
 	rm -Rf $(TEMP_UPLOAD)
-

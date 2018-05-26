@@ -21,4 +21,3 @@ endif
 
 CFLAGS += $(ARCH_ARG)
 LDFLAGS += $(ARCH_ARG)
-

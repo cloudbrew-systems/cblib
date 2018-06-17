@@ -31,23 +31,6 @@
 #define FILE_DECRYPTED_JOINED_STATE "FDJS"
 #define FILE_DECRYPTED_STATE "FDS"
 
-/* PLACEHOLDER: Sample File names for PoC/MVP */
-#define SAMPLE_FILES_DIR "../sample_files"
-#define FILE_34KB SAMPLE_FILES_DIR"/UnitStatement_11507080_0601150926502650.pdf"
-#define FILENAME_34KB "UnitStatement_11507080_0601150926502650.pdf"
-#define FILE_365KB SAMPLE_FILES_DIR"/developers-survival-guide.pdf"
-#define FILENAME_365KB "developers-survival-guide.pdf"
-#define FILE_3MB SAMPLE_FILES_DIR"/file1.jpg"
-#define FILENAME_3MB "file1.jpg"
-#define FILE_4MB SAMPLE_FILES_DIR"/gnupg-2.0.29.tar.bz2"
-#define FILENAME_4MB "gnupg-2.0.29.tar.bz2"
-#define FILE_13MB SAMPLE_FILES_DIR"/Cisco webex player.msi"
-#define FILENAME_13MB "Cisco webex player.msi"
-#define FILE_55MB SAMPLE_FILES_DIR"/ccollab_client_6_0_6005_windows.exe"
-#define FILENAME_55MB "ccollab_client_6_0_6005_windows.exe"
-#define FILE_101MB SAMPLE_FILES_DIR"/eclipse-java-helios-SR2-win32-x86_64.zip"
-#define FILENAME_101MB "eclipse-java-helios-SR2-win32-x86_64.zip"
-
 unsigned long long int fileHandling_GetSizeInBytes(char *fileLocation);
 int fileHandling_CreateDir(char *userId);
 char *fileHandling_GetShredSuffix(int i);

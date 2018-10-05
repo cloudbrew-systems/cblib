@@ -1,5 +1,5 @@
 # CloudBrew Library
-The core library of CloudBrew that does all the data distribution & reassembly as part of upload & download
+The core library of CloudBrew that does all the data distribution & reassembly as part of upload & download. Effort is underway to have it ported to the distributed blockchain system as well.
 
 # Prerequisites
 RHEL\CentOS 7+ OR AmazonLinux (Serverless Lambda)

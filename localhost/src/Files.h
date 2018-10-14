@@ -1,6 +1,9 @@
+// The new version of src/cpp/FileHandling.h
 #ifndef FILE_HANDLING_H
 #define FILE_HANDLING_H
 
+#include <iostream>
+#include <string>
 #include <string>
 
 using namespace std;

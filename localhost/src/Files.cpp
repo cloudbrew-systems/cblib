@@ -1,9 +1,7 @@
-// The new version of src/cpp/FileHandling.cpp
+// The new version (src/cpp/FileHandling.cpp --> localhost/src/Files.cpp)
 #include "Files.h"
 
-int main(int argc, char **argv) {
-    Files f("sample_file.jpg");
-    f.createDir("120");
-
+int Files::createDir(std::string userId) {
+    std::cout << "filename:" << filename << "userid: " << userId << std::endl;
     return 0;
 }

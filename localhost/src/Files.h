@@ -1,23 +1,16 @@
-// The new version of src/cpp/FileHandling.h
-#ifndef FILE_HANDLING_H
-#define FILE_HANDLING_H
+// The new version (src/cpp/FileHandling.h --> localhost/src/Files.h)
+#ifndef FILES_H
+#define FILES_H
 
 #include <iostream>
 #include <string>
-#include <string>
-
-using namespace std;
 
 class Files {
-    string filename;
 public:
-    Files(string fname): filename(fname) {}
-    int createDir(string userId);
+    Files(std::string _filename): filename(_filename) {}
+    int createDir(std::string userId);
+private:
+    std::string filename;
 };
 
-int Files::createDir(string userId) {
-    cout << "filename:" << filename << endl;
-    return 0;
-}
-
-#endif /* FILE_HANDLING_H */
+#endif /* FILES_H */

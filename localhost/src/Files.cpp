@@ -389,10 +389,13 @@ std::string Files::encryptshreds(std::string filename, std::string type, std::st
 	cmd += "cd " + this->FILES_TEMPDIR + "/" + userid + "; find . -name \"" + filename + "*\" > " + this->FILES_TEMPSHREDLIST;
 	system(cmd.c_str());
 
+	std::ifstream filestempshredlist;
+	filestempshredlist.open(this->FILES_TEMPSHREDLIST);
+
 	// fp = fopen(TEMP_SHRED_FILESLIST, "r");
 	// if(fp)
 	// {
-	// 	snprintf(fileEncryptedStateJSON, MAX_LEN*10, "{\"%s\": \"%s\", \"%s\": \"%s\", \"%s\": \"%s\", \"%s\": [", TYPE, type, FILENAME, fileName, UID, userId, FILE_SPLIT_ENCRYPTED_STATE);
+	// snprintf(fileEncryptedStateJSON, MAX_LEN*10, "{\"%s\": \"%s\", \"%s\": \"%s\", \"%s\": \"%s\", \"%s\": [", TYPE, type, FILENAME, fileName, UID, userId, FILE_SPLIT_ENCRYPTED_STATE);
 	// 	while(fgets(shredFileName, MAX_LEN, fp) != NULL)/* Read the file list till EOF */
 	// 	{
 	// 		/* Remove new line from end and "./" from the file name that gets added as prefix from the search */

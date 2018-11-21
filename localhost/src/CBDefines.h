@@ -1,3 +1,4 @@
+// The new version (src/cpp/cbDefines.h --> localhost/src/CBDefines.h)
 #ifndef CB_DEFINES_H
 #define CB_DEFINES_H
 

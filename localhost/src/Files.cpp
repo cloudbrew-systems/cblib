@@ -1,4 +1,4 @@
-// The new version (src/cpp/FileHandling.cpp --> localhost/src/Files.cpp)
+// The new version (src/cpp/fileHandling.cpp --> localhost/src/Files.cpp)
 #include "Files.h"
 
 /* Create the file handling directory */

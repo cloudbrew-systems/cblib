@@ -1,4 +1,4 @@
-// The new version (src/cpp/FileHandling.h --> localhost/src/Files.h)
+// The new version (src/cpp/fileHandling.h --> localhost/src/Files.h)
 #ifndef FILES_H
 #define FILES_H
 

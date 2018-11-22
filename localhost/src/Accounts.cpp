@@ -1,27 +1,8 @@
-// The new version (src/cpp/accountHandling.cpp --> localhost/src/Accounts.cpp)
-/*
-CloudBrew - Software Defined Distributed Public Cloud Storage
-Perform all tasks related to the linked accounts
-
-File:	accountHandling.cpp
-Author:	Runcy Oommen
-Date:	11/02/2015
-
-Copyright 2015 CloudBrew Systems. All rights reserved.
-*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "cbDefines.h"
-#include "accountHandling.h"
-#include "MemMgr.h"
-#include "brewEngine.h"
+// The new version (localhost/ref/accountHandling.cpp --> localhost/src/Accounts.cpp)
+#include "Accounts.h"
 
 /* Get the percentage of the linked account from the brewscore at the given index */
-char* accountHandling_GetPercentFromBrewScore(char *brewScore, int index)
-{
+std::string Accounts::getpercentfrombrewscore(std::string brewScore, int index) {
 	cJSON *jsonBrewScoreRaw, *jsonBrewScore, *jsonArrayItem, *jsonAccountPercent;
 
 	jsonBrewScoreRaw = cJSON_Parse(brewScore);
@@ -42,8 +23,7 @@ char* accountHandling_GetPercentFromBrewScore(char *brewScore, int index)
 }
 
 /* Get the name of the linked account from the brewscore at the given index */
-char* accountHandling_GetNameFromBrewScore(char *brewScore, int index)
-{
+std::string Accounts::getnamefrombrewscore(std::string brewScore, int index) {
 	cJSON *jsonBrewScoreRaw, *jsonBrewScore, *jsonArrayItem, *jsonAccountName;
 
 	jsonBrewScoreRaw = cJSON_Parse(brewScore);
@@ -64,8 +44,7 @@ char* accountHandling_GetNameFromBrewScore(char *brewScore, int index)
 }
 
 /* Get the name of the account from linked accounts at the given index */
-char* accountHandling_GetNameFromLinkedAccounts(char *linkedAccountsJSON, int index)
-{
+std::string Accounts::getnamefromlinkedaccounts(std::string linkedAccountsJSON, int index) {
 	cJSON *jsonLinkedAccountsRaw, *jsonLinkedAccounts, *jsonArrayItem, *jsonAccountName;
 
 	jsonLinkedAccountsRaw = cJSON_Parse(linkedAccountsJSON);
@@ -86,8 +65,7 @@ char* accountHandling_GetNameFromLinkedAccounts(char *linkedAccountsJSON, int in
 }
 
 /* Get the total space of the account from linked accounts at the given index */
-double accountHandling_GetTotalSpaceFromLinkedAccounts(char *linkedAccountsJSON, int index)
-{
+double Accounts::gettotalspacefromlinkedaccounts(std::string linkedAccountsJSON, int index) {
 	cJSON *jsonLinkedAccountsRaw, *jsonLinkedAccounts, *jsonArrayItem, *jsonTotalSpace;
 
 	jsonLinkedAccountsRaw = cJSON_Parse(linkedAccountsJSON);
@@ -107,8 +85,7 @@ double accountHandling_GetTotalSpaceFromLinkedAccounts(char *linkedAccountsJSON,
 }
 
 /* Get the used space of the account from linked accounts at the given index */
-double accountHandling_GetUsedSpaceFromLinkedAccounts(char *linkedAccountsJSON, int index)
-{
+double Accounts::getusedspacefromlinkedaccounts(std::string linkedAccountsJSON, int index) {
 	cJSON *jsonLinkedAccountsRaw, *jsonLinkedAccounts, *jsonArrayItem, *jsonFreeSpace;
 
 	jsonLinkedAccountsRaw = cJSON_Parse(linkedAccountsJSON);
@@ -128,8 +105,7 @@ double accountHandling_GetUsedSpaceFromLinkedAccounts(char *linkedAccountsJSON, 
 }
 
 /* Get the max file size of the account from linked accounts at the given index */
-double accountHandling_GetMaxFileSizeFromLinkedAccounts(char *linkedAccountsJSON, int index)
-{
+double Accounts::getmaxfilesizefromlinkedaccounts(std::string linkedAccountsJSON, int index) {
 	cJSON *jsonLinkedAccountsRaw, *jsonLinkedAccounts, *jsonArrayItem, *jsonMaxFileSize;
 
 	jsonLinkedAccountsRaw = cJSON_Parse(linkedAccountsJSON);

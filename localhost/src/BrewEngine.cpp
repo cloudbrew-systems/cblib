@@ -1,14 +1,4 @@
-// The new version (src/cpp/brewEngine.cpp --> localhost/src/BrewEngine.cpp)
-/*
-CloudBrew - Software Defined Distributed Public Cloud Storage
-Heart of the system where the real magic happens
-
-File:	brewEngine.cpp
-Author: Runcy Oommen
-Date:	12/13/2015
-
-Copyright 2015 CloudBrew Systems. All rights reserved.
-*/
+// The new version (localhost/ref/brewEngine.cpp --> localhost/src/BrewEngine.cpp)
 
 #include <stdio.h>
 #include <stdlib.h>

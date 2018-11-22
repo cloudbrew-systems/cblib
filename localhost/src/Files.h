@@ -1,4 +1,4 @@
-// The new version (src/cpp/fileHandling.h --> localhost/src/Files.h)
+// The new version (localhost/ref/fileHandling.h --> localhost/src/Files.h)
 #ifndef FILES_H
 #define FILES_H
 
@@ -19,9 +19,9 @@ public:
     std::string getsha256hash(std::string);
     int deleteshreds(std::string, std::string);
     std::string encryptshreds(std::string, std::string, std::string, std::string, int);
+// protected:
 private:
     std::string filename;
-protected:
     const std::string FILES_TEMPDIR = "/tmp/upload";
     const std::string FILES_TEMPSHREDLIST = FILES_TEMPDIR + "/shredlist";
     const std::string FILES_TEMPSHREDCOUNT = FILES_TEMPDIR + "/shredcount";

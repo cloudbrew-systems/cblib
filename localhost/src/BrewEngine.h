@@ -1,21 +1,33 @@
 // The new version (localhost/ref/brewEngine.h --> localhost/src/BrewEngine.h)
-#ifndef BREW_ENGINE_H
-#define BREW_ENGINE_H
+#ifndef BREWENGINE_H
+#define BREWENGINE_H
 
-#define BREWSCORE "BS"
-#define TOTALSPACE "TS"
-#define USEDSPACE "US"
-#define MAXFILESIZE "MFS"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <memory>
+#include <sys/stat.h>
 
-#define TOTAL_ACS_FS_NOTCALC -1
-#define TOTAL_ACS_FS_PERCENT_NOTCALC -1
-#define FREE_SPACE_PERCENT_LARGEST 999
+#include "Files.h"
+#include "Accounts.h"
 
-char *brewEngine_CalcBrewScore(char *linkedAccountsJSON);
-char* brewEngine_CleanupQuotes(char *accountName);
-char* brewEngine_CleanupID(char *accountName);
-char* brewEngine_CleanupHash(char *accountName);
-char *brewEngine_GetPerAccountName(int index, cJSON *cjson_AccountsTotal);
-double brewEngine_GetPerAccountFreeSpaceStats(int ctr, int index, cJSON *cjson_AccountsTotal, double totalAccountFreeSpace, int totalAccountPercent);
+class BrewEngine: public Files, public Accounts {
+public:
+    std::string calcbrewscore(std::string linkedaccountsjson);
+    std::string cleanupquotes(std::string accountname);
+    std::string cleanupid(std::string accountname);
+    std::string cleanuphash(std::string accountname);
+    std::string getperaccountname(int index, cJSON *accountstotal);
+    double getperaccountfreespacestats(int ctr, int index, cJSON *accountstotal, double totalaccountfreespace, int totalaccountpercent);
+// protected:
+private:
+    const std::string BE_BREWSCORE = "BS";
+    const std::string BE_TOTALSPACE = "TS";
+    const std::string BE_USEDSPACE = "US";
+    const std::string BE_MAXFILESIZE = "MFS";
+    const short BE_TOTALFREESPACENOTCALC = -1;
+    const short BE_TOTALFREEPERCENTNOTCALC = -1;
+    const short BE_FREESPACEPERCENTLARGEST = 999
+};
 
-#endif /* BREW_ENGINE_H */
+#endif /* BREWENGINE_H */

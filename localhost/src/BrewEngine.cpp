@@ -1,41 +1,27 @@
 // The new version (localhost/ref/brewEngine.cpp --> localhost/src/BrewEngine.cpp)
+#include "BrewEngine.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
+std::string BrewEngine::cleanupquotes(std::string accountname) {
+	accountname++;
+	strtok(accountname, "\"");
+	return accountname;
+}
 
-#include "cbDefines.h"
-#include "brewEngine.h"
-#include "accountHandling.h"
-#include "MemMgr.h"
-#include "fileHandling.h"
-
-char* brewEngine_CleanupQuotes(char *accountName)
-{
-	accountName++;
-	strtok(accountName, "\"");
+std::string BrewEngine::cleanupid(std::string accountname) {
+	strtok(accountname, "_");
 	return accountName;
 }
 
-char* brewEngine_CleanupID(char *accountName)
-{
-	strtok(accountName, "_");
-	return accountName;
+std::string BrewEngine::cleanuphash(std::string accountname) {}
+	strtok(accountname, "#");
+	return accountname;
 }
 
-char* brewEngine_CleanupHash(char *accountName)
-{
-	strtok(accountName, "#");
-	return accountName;
-}
-
-char *brewEngine_GetPerAccountName(int index, cJSON *cjson_AccountsTotal)
-{
+std::string BrewEngine::getperaccountname(int index, cJSON *accountstotal) {
 	char *accountNameFmt;
 	char accountName[SHORT_LEN] = {'\0'};
 
-	cJSON *cjson_Account = cJSON_GetArrayItem(cjson_AccountsTotal, index);
+	cJSON *cjson_Account = cJSON_GetArrayItem(accountstotal, index);
 
 	cJSON *cjson_AccountName = cJSON_GetObjectItem(cjson_Account, ACCOUNTNAME);
 	snprintf(accountName, SHORT_LEN, "%s", cJSON_Print(cjson_AccountName));
@@ -44,8 +30,7 @@ char *brewEngine_GetPerAccountName(int index, cJSON *cjson_AccountsTotal)
 	return accountNameFmt;
 }
 
-double brewEngine_GetPerAccountFreeSpaceStats(int ctr, int index, cJSON *cjson_AccountsTotal, double totalAccountFreeSpace, int totalAccountFreeSpacePercent)
-{
+double BrewEngine::getperaccountfreespacestats(int ctr, int index, cJSON *accountstotal, double totalaccountfreespace, int totalaccountpercent) {
 	double perAccountTotalSpace = 0, perAccountUsedSpace = 0, perAccountFreeSpace = 0, perAccountFreeSpaceStat = 0;
 	char totalSpace[SHORT_LEN] = {'\0'}, usedSpace[SHORT_LEN] = {'\0'};
 	int perAccountFreeSpacePercent = 0, diffFromHundred = 0;
@@ -118,12 +103,10 @@ double brewEngine_GetPerAccountFreeSpaceStats(int ctr, int index, cJSON *cjson_A
 		}
 		perAccountFreeSpaceStat = perAccountFreeSpacePercent;
 	}
-
 	return perAccountFreeSpaceStat;
 }
 
-char *brewEngine_CalcBrewScore(char *linkedAccountsJSON)
-{
+std::string BrewEngine::calcbrewscore(std::string linkedaccountsjson) {
 	char brewScoreJSON[MAX_LEN*2] = {'\0'}, brewScoreJSONSingle[MAX_LEN] = {'\0'};
 	char accountNameFmtIndex0[SHORT_LEN] = {'\0'}, accountNameFmtIndex1[SHORT_LEN] = {'\0'}, accountNameFmtIndex2[SHORT_LEN] = {'\0'};
 	char *brewScore = MEM_MALLOC(MAX_LEN*2);
@@ -394,4 +377,3 @@ char *brewEngine_CalcBrewScore(char *linkedAccountsJSON)
 	cJSON_Delete(cjson_AccountsLinked);
 	return brewScore;
 }
-

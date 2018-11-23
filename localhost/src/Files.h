@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 
 #include "CBDefines.h"
+#include "SHA256.h"
 
 class Files: public CBDefines {
 public:
@@ -16,7 +17,6 @@ public:
     int createdir(std::string);
     unsigned long long int sizeinbytes(std::string);
     std::string shredsuffix(int);
-    std::string getsha256hash(std::string);
     int deleteshreds(std::string, std::string);
     std::string encryptshreds(std::string, std::string, std::string, std::string, int);
 // protected:

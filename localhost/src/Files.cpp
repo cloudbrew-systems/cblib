@@ -1,6 +1,7 @@
 // The new version (localhost/ref/fileHandling.cpp --> localhost/src/Files.cpp)
 #include "Files.h"
 
+
 /* Create the file handling directory */
 int Files::createdir(std::string userid) {
     std::string cmd = "mkdir -p ";
@@ -327,37 +328,6 @@ std::string  Files::shredsuffix(int i)
 	return "zz"; /* Should not reach here */
 }
 
-/* Calculate the SHA256 hash */
-
-// TODO: Work on this one and make it C++ standard by using the SHA256 algo directly
-// std::string getsha256hash(std::string fileabsloc)
-// {
-// 	std::string cmd;
-//     // char cmd[MAX_CMD_LEN*2] = {'\0'};
-// 	FILE *fp;
-// 	struct stat statbuf;
-// 	// char *encryptedFisleNameHash = MEM_XMALLOC(MAX_LEN);
-	
-// 	snprintf(cmd, MAX_CMD_LEN*2, "sha256sum \"%s\" | awk {'print $1'} > %s", fileAbsLoc, TEMP_ENCRYPTED_FILENAMEHASH);
-// 	system(cmd);
-
-// 	if(stat(TEMP_ENCRYPTED_FILENAMEHASH, &statBuf) == 0)
-// 	{
-// 		fp = fopen(TEMP_ENCRYPTED_FILENAMEHASH, "r");
-// 		if(fp)
-// 		{
-// 			if (fgets(encryptedFileNameHash, MAX_LEN, fp) != NULL)
-// 				strtok(encryptedFileNameHash, "\n");/* Remove new line from end */
-// 		}
-// 		fclose(fp);
-// 	}
-
-// 	snprintf(cmd, MAX_CMD_LEN*2, "rm -f %s", TEMP_ENCRYPTED_FILENAMEHASH);
-// 	system(cmd);
-
-// 	return encryptedFileNameHash;
-// }
-
 /* Delete the file shreds that were created */
 int Files::deleteshreds(std::string splitfilename, std::string userid)
 {
@@ -439,7 +409,8 @@ std::string Files::encryptshreds(std::string filename, std::string type, std::st
 	// 		/* Get the SHA256 hash of the encrypted split file shreds */
 	// 		char encryptedFileAbsLoc[MAX_LEN] = {'\0'};
 	// 		snprintf(encryptedFileAbsLoc, MAX_LEN, "%s/%s/%s", TEMP_DIR, userId, encryptedFileName);
-	// 		fileHandling_GetSHA256Hash(encryptedFileAbsLoc);
+			SHA256 sha;
+			sha.sha256filepath(encryptedFileAbsLoc);
 
 	// 		snprintf(fileEncryptedStateJSONSingle, MAX_LEN*2, "{\"%s\": \"%s\", \"%s\": \"%s\", \"%s\": \"%s\"}", ACCOUNTNAME, accountName, ENCRYPTED_SPLIT_NAME, encryptedFileName, ENCRYPTED_ABSOLUTE_LOCATION, encryptedFileAbsLoc);
 	// 		strcat(fileEncryptedStateJSON, fileEncryptedStateJSONSingle);
